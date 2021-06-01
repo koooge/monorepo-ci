@@ -1,14 +1,12 @@
-name: CI {{ROUTE}}
+name: CI bar
 
 on:
-  # push:
-    # branches: [ main ]
+  push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
     paths:
-      - "{{ROUTE}}/**"
-
-  workflow_dispatch:
+      - "bar/**"
 
 jobs:
   build:
@@ -16,5 +14,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          cd {{ROUTE}}
+          cd bar
           echo Hello, `pwd` !
